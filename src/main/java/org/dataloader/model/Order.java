@@ -9,8 +9,6 @@ import java.util.Objects;
 
 
 @Document(collection = "Orders")
-@Setter @Getter
-@NoArgsConstructor @AllArgsConstructor
 public class Order {
 
     @Id
@@ -19,6 +17,47 @@ public class Order {
     private Double totalAmount;
     private LocalDate orderDate;
 
+
+    public Order(String id, String customerName, Double totalAmount, LocalDate orderDate) {
+        this.id = id;
+        this.customerName = customerName;
+        this.totalAmount = totalAmount;
+        this.orderDate = orderDate;
+    }
+
+    public Order(){}
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public Double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(LocalDate orderDate) {
+        this.orderDate = orderDate;
+    }
 
     @Override
     public boolean equals(Object o) {
